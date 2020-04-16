@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-
 //represents Octagon shape
 public class Octagon implements Shape {
 
