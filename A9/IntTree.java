@@ -14,12 +14,8 @@ public class IntTree {
 	public int countEmpty() {
 		return countEmpty(overallRoot);
 	}
-
-	//reference: CH17 pg1051 countleaves
+	
 	private int countEmpty(IntTreeNode root) {
-		if (overallRoot == null) {
-			return 1; // empty tree has one empty branch(tree itself)
-		}
 		if (root == null) {
 			return 1;
 		} else {
