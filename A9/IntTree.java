@@ -10,11 +10,11 @@ import java.util.*;
 public class IntTree {
 	private IntTreeNode overallRoot;
 
-	// counts empty braches; each leaf node has 2 empty branches
+	//counts empty braches; each leaf node has 2 empty branches, 
 	public int countEmpty() {
 		return countEmpty(overallRoot);
 	}
-	
+//reference 1051 countLeaves
 	private int countEmpty(IntTreeNode root) {
 		if (root == null) {
 			return 1;
@@ -22,11 +22,35 @@ public class IntTree {
 			return countEmpty(root.left) + countEmpty(root.right);
 		}
 	}
-
+	
 	public void printCountEmpty() {
 		System.out.print("Empty Branches: " + countEmpty(overallRoot));
 		System.out.println();
 	}
+	
+	public boolean isFull() {
+		return isFull(overallRoot);
+	}
+	
+	//True: full tree;empty tree OR every node has 0 or 2 children
+	public boolean isFull(IntTreeNode root) {
+		if (root == null) {
+            return true;
+        } else if (root.left == null && root.right != null) {
+            return false;
+        } else if (root.right == null && root.left != null) {
+            return false;
+        } else {
+            return isFull(root.left) && isFull(root.right);
+        }
+    }
+	
+	public void printIsFull() {
+		System.out.print("Full tree: " + isFull(overallRoot));
+		System.out.println();
+	}
+
+
 
 	// pre : max > 0
 	// post: constructs a sequential tree with given number of
@@ -118,5 +142,8 @@ public class IntTree {
 			printSideways(root.left, level + 1);
 		}
 	}
+	
+
+	
 
 }

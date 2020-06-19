@@ -10,5 +10,6 @@ public class IntTreeClient {
         t.printInorder();
         t.printPostorder();
         t.printCountEmpty();
+        t.printIsFull();
     }
 }
